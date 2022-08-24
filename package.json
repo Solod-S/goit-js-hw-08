@@ -549,7 +549,7 @@
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-08/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -561,5 +561,5 @@
   "bugs": {
     "url": "https://github.com/Solod-S/goit-js-hw-08/issues"
   },
-  "homepage": "https://github.com/Solod-S/goit-js-hw-08#readme"
+  "homepage": "https://github.com/Solod-S/goit-js-hw-08"
 }
