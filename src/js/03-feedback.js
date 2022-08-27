@@ -25,7 +25,7 @@ const feedback = {
     // console.log((feedback.formData[event.target.name] = event.target.value));
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(feedback.formData));
-    // переделываем в JSON {email: "value", message: "value"} ==> {"email": "value", "message": "value"} и записываем в локальное хранилище
+    // переделываем в JSON {email: "value", message: "value"} ==> {"email": "value", "message": "value"} и записываем в локальное хранилище STORAGE_KEY
   },
   populateTextareaMulti() {
     const message = JSON.parse(localStorage.getItem(STORAGE_KEY));
