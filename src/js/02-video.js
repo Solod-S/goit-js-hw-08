@@ -24,7 +24,7 @@ if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
   //если в локальное хранилище нечего не записано
 } else {
   console.log(
-    "проигрывание начнеться с",
+    "проигрывание видео начнеться с",
     parseInt(JSON.parse(localStorage.getItem(SAVED_TIME)))
   );
   player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME)));
