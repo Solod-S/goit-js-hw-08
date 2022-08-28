@@ -3190,7 +3190,7 @@ player.on("timeupdate", (0, _lodash.default)(onPlay, 1000)); // player + мет�
 if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
   console.log("У нас нет сохраненого времени"); //если в локальное хранилище нечего не записано
 } else {
-  console.log("проигрывание начнеться с", parseInt(JSON.parse(localStorage.getItem(SAVED_TIME))));
+  console.log("проигрывание видео начнеться с", parseInt(JSON.parse(localStorage.getItem(SAVED_TIME))));
   player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME))); // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
 }
 },{"@vimeo/player":"../node_modules/@vimeo/player/dist/player.es.js","lodash.throttle":"../node_modules/lodash.throttle/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
