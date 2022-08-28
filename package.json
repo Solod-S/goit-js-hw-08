@@ -7,6 +7,7 @@
   "description": "my-homework",
   "main": "index.js",
   "dependencies": {
+    "@vimeo/player": "^2.17.1",
     "abab": "^2.0.6",
     "acorn": "^7.4.1",
     "acorn-globals": "^4.3.4",
