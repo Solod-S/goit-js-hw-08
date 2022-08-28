@@ -665,7 +665,7 @@ var feedback = {
     feedback.formData[event.target.name] = event.target.value; // в форм дату записываем {email: "value", message: "value"}
     // console.log((feedback.formData[event.target.name] = event.target.value));
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(feedback.formData)); // переделываем в JSON {email: "value", message: "value"} ==> {"email": "value", "message": "value"} и записываем в локальное хранилище
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(feedback.formData)); // переделываем в JSON {email: "value", message: "value"} ==> {"email": "value", "message": "value"} и записываем в локальное хранилище STORAGE_KEY
   },
   populateTextareaMulti: function populateTextareaMulti() {
     var message = JSON.parse(localStorage.getItem(STORAGE_KEY)); // возвращаем JSON в обычный объект и записываем в переменную
@@ -713,7 +713,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57720" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57064" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
