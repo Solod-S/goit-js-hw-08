@@ -19,14 +19,26 @@ const onPlay = function (data) {
 
 player.on("timeupdate", throttle(onPlay, 1000));
 // player + метод on c timeupdate ==> ничинаем отслеживать событие каждую секунду (throttle из lodash нам в помощь)
-if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
+
+const currentTimeInLS = JSON.parse(localStorage.getItem(SAVED_TIME));
+// переменная с сохраненым временем в локальной переменной
+if (!currentTimeInLS) {
   console.log("У нас нет сохраненого времени");
   //если в локальное хранилище нечего не записано
 } else {
-  console.log(
-    "проигрывание видео начнеться с",
-    parseInt(JSON.parse(localStorage.getItem(SAVED_TIME)))
-  );
-  player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME)));
+  console.log("проигрывание видео начнеться с", parseInt(currentTimeInLS));
+  player.setCurrentTime(currentTimeInLS);
   // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
 }
+
+// if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
+//   console.log("У нас нет сохраненого времени");
+//   //если в локальное хранилище нечего не записано
+// } else {
+//   console.log(
+//     "проигрывание видео начнеться с",
+//     parseInt(JSON.parse(localStorage.getItem(SAVED_TIME)))
+//   );
+//   player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME)));
+//   // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
+// }

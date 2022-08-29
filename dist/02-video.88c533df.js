@@ -3187,12 +3187,24 @@ var onPlay = function onPlay(data) {
 
 player.on("timeupdate", (0, _lodash.default)(onPlay, 1000)); // player + метод on c timeupdate ==> ничинаем отслеживать событие каждую секунду (throttle из lodash нам в помощь)
 
-if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
+var currentTimeInLS = JSON.parse(localStorage.getItem(SAVED_TIME)); // переменная с сохраненым временем в локальной переменной
+
+if (!currentTimeInLS) {
   console.log("У нас нет сохраненого времени"); //если в локальное хранилище нечего не записано
 } else {
-  console.log("проигрывание видео начнеться с", parseInt(JSON.parse(localStorage.getItem(SAVED_TIME))));
-  player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME))); // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
-}
+  console.log("проигрывание видео начнеться с", parseInt(currentTimeInLS));
+  player.setCurrentTime(currentTimeInLS); // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
+} // if (!JSON.parse(localStorage.getItem(SAVED_TIME))) {
+//   console.log("У нас нет сохраненого времени");
+//   //если в локальное хранилище нечего не записано
+// } else {
+//   console.log(
+//     "проигрывание видео начнеться с",
+//     parseInt(JSON.parse(localStorage.getItem(SAVED_TIME)))
+//   );
+//   player.setCurrentTime(JSON.parse(localStorage.getItem(SAVED_TIME)));
+//   // если локальное хранилице не пустое то запускаем, player + метод setCurrentTime который воспроизводит видео с последнего места остановки
+// }
 },{"@vimeo/player":"../node_modules/@vimeo/player/dist/player.es.js","lodash.throttle":"../node_modules/lodash.throttle/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -3221,7 +3233,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50355" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50493" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
